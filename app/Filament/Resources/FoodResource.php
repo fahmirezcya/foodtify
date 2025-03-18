@@ -105,7 +105,7 @@ class FoodResource extends Resource
                 ]),
 
                 Group::make([
-                    Section::make('Promo')
+                    Section::make('Ketersediaan & Promo')
                         ->schema([
                             Forms\Components\Toggle::make('is_ready')
                                 ->label('Ketersediaan')
