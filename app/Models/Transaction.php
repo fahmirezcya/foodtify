@@ -18,20 +18,21 @@ class Transaction extends Model
         'checkout_link',
         'payment_method',
         'payment_status',
+        'is_cashpay',
         'subtotal',
         'ppn',
         'total',
     ];
 
     public function Barcode(): \Illuminate\Database\Eloquent\Relations\BelongsTo
-{
-    return $this->belongsTo(\App\Models\Barcode::class, 'barcode_id', 'id');
-}
+    {
+        return $this->belongsTo(\App\Models\Barcode::class, 'barcode_id', 'id');
+    }
 
 
     public function transactionItems(): \Illuminate\Database\Eloquent\Relations\HasMany
-{
-    return $this->hasMany(\App\Models\TransactionItem::class);
-}
+    {
+        return $this->hasMany(\App\Models\TransactionItem::class);
+    }
 
 }

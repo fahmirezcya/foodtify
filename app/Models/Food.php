@@ -16,24 +16,25 @@ class Food extends Model
         'price',
         'price_afterdiscount',
         'percent',
+        'is_ready',
         'is_promo',
     ];
 
     public function Category(): \Illuminate\Database\Eloquent\Relations\BelongsTo
-{
-    return $this->belongsTo(\App\Models\Category::class, 'category_id', 'id');
-}
+    {
+        return $this->belongsTo(\App\Models\Category::class, 'category_id', 'id');
+    }
 
 
     public function foodImages(): \Illuminate\Database\Eloquent\Relations\HasMany
-{
-    return $this->hasMany(\App\Models\FoodImage::class);
-}
+    {
+        return $this->hasMany(\App\Models\FoodImage::class);
+    }
 
 
     public function transactionItems(): \Illuminate\Database\Eloquent\Relations\HasMany
-{
-    return $this->hasMany(\App\Models\TransactionItem::class);
-}
+    {
+        return $this->hasMany(\App\Models\TransactionItem::class);
+    }
 
 }

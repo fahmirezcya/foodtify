@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      */
@@ -16,11 +15,12 @@ return new class extends Migration
             $table->foreignId('barcode_id')->constrained('barcodes')->cascadeOnDelete();
             $table->string('code', 6);
             $table->string('name', 45);
-            $table->string('phone',16);
-            $table->string('external_id',150);
-            $table->string('checkout_link',150);
-            $table->string('payment_method',45)->nullable();
+            $table->string('phone', 16);
+            $table->string('external_id', 150);
+            $table->string('checkout_link', 150);
+            $table->string('payment_method', 45)->nullable();
             $table->unsignedTinyInteger('status')->default(0);
+            $table->boolean('is_cashpay')->default(true);
             $table->unsignedBigInteger('subtotal');
             $table->unsignedBigInteger('ppn');
             $table->unsignedBigInteger('total');

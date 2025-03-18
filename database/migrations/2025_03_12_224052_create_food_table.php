@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      */
@@ -19,6 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('price');
             $table->string('price_afterdiscount', 20)->nullable();
             $table->string('percent', 4)->nullable();
+            $table->boolean('is_ready')->default(true);
             $table->boolean('is_promo')->default(false);
             $table->timestamps();
         });
